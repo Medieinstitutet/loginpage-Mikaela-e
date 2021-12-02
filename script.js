@@ -12,11 +12,22 @@ let submit = document.querySelector(".submit");
 //Hämta elementet för medelandet under login
     let message = document.querySelector(".message");
 //fixa så ifall rätt användare loggar in "bra" och om fel lösenord "invalid" 
+
 submit.addEventListener("click", function(){
+
     if(user == txtuser.value && pass == txtpass.value){
         message.innerHTML = "login Successfull!";
+            console.log("De funkade");
+            submit.innerText = "Inloggad";
+            let main = document.getElementById("main");
+           main.innerHTML ="<h1>Välkommen Janne!</h1><br><button id='button2'>Logga ut</button>";
+           
+           button2.addEventListener("click", function(){
+               
+           })
+        
     }else{
         message.innerHTML = "username or password is invalid";
     }
-
+    
 })
