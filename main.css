@@ -1,0 +1,46 @@
+body{
+    margin:0;
+    background-color: #e8d5df;
+}
+header{
+    
+    min-height: 100px;
+    margin-top: -170px;
+}
+header h1{
+    font-size: 50px;
+    margin-top: 170px;
+color: #ab8a9b;
+    display: flex;
+    justify-content: center;
+}
+legend{
+    font-size: 20px;
+    color:#ab8a9b;
+}
+input{
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+
+}
+.txtuser{
+    font-size: 20px;
+}
+.txtpass{
+    font-size: 20px;
+}
+button{
+    font-size: 20px;
+}
+p{
+    font-size: 20px;
+    color: #ab8a9b;
+}
+footer{
+    background-color: #deced6;
+    font-size: 30px;
+    text-align: center;
+    min-height: 100px;
+    margin-top: 90px;
+}
