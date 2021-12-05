@@ -1,33 +1,49 @@
+
 //Hämta elementen
 let txtuser = document.querySelector(".txtuser");
 let txtpass = document.querySelector(".txtpass");
-let submit = document.querySelector(".submit");
+let button1 = document.querySelector(".button1");
 
-//Sätt dit värdet med nyckeln och värdet(Användarnamnet & Lösenordet)
-    localStorage.setItem("user","janne");
-    localStorage.setItem("passw","test");
+//localStorage, nyckeln och värdet(Användarnamnet & Lösenordet)
+localStorage.setItem("user","janne");
+localStorage.setItem("pass","test");
 //Hämta data från localStorage
     let user = localStorage.getItem("user");
     let pass = localStorage.getItem("pass");
 //Hämta elementet för medelandet under login
     let message = document.querySelector(".message");
-//fixa så ifall rätt användare loggar in "bra" och om fel lösenord "invalid" 
+  
+ 
+//knapp för inloggning..
+ //Om användaren godkäns så visas Välkommen!...
+    
+           button1.addEventListener("click", function(){     
+    if (user == txtuser.value && pass == txtpass.value ){
+            let main = document.getElementById("main")
+            main.innerText = "Välkommen" + " " + localStorage.getItem("user", ""); 
+            main.style.fontSize = "30px";
+            
 
-submit.addEventListener("click", function(){
+            //Skapa knapp för utloggning..
+            let logOut = document.createElement("button")
+            logOut.innerText="Logga ut";
+            logOut.style.display = "block";
+            main.append(logOut)
 
-    if(user == txtuser.value && pass == txtpass.value){
-        message.innerHTML = "login Successfull!";
-            console.log("De funkade");
-            submit.innerText = "Inloggad";
-            let main = document.getElementById("main");
-           main.innerHTML ="<h1>Välkommen Janne!</h1><br><button id='button2'>Logga ut</button>";
-           
-           button2.addEventListener("click", function(){
-               
-           })
-        
+           //knappens utloggning...
+           logOut.addEventListener("click", function(){
+            localStorage.clear();
+            location.reload(); 
+            
+               })    
+               //Om användaren inte finns, meddelande...
     }else{
-        message.innerHTML = "username or password is invalid";
+        message.innerHTML = "username or password is invalid"; 
+       
+        
     }
     
 })
+
+//Koden ej klar, kunde inte få till att den inte loggas ut när man laddar om sidan..
+//Kan bero på att jag inte använde mig av "objekt" och function från första början.
